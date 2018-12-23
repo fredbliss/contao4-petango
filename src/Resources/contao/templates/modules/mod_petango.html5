@@ -1,0 +1,82 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?= $this->articles ?>
+
+  <!-- indexer::stop -->
+  <p class="back"><a href="<?= $this->referer ?>" title="<?= $this->back ?>"><?= $this->back ?></a></p>
+  <!-- indexer::continue -->
+
+  <div class="mod_petreader">
+      <div class="pet_detail">
+        <?php if ($this->pet): ?>
+          <div class="size1of2">
+              <div class="pet_gallery">
+                <div class="flexslider">
+                  <ul class="slides">
+                    <?php $i=0; foreach ($this->pet['Slides'] as $pictures): ?>
+                    <li<?= $pictures['type']=='video' ? ' class="video_container"' : '' ?> data-thumb="<?= $pictures['type']=='video' ? 'system/modules/petpoint/assets/images/pet_vid_icon.png' : 'https:'.$pictures['src'] ?>">
+                       <?= $pictures['type']=='video' ? '<iframe width="100%" src="'.$pictures['src'].'" frameborder="0" allowfullscreen></iframe>' : '<img src="https:'.$pictures['src'].'" />' ?>
+                    </li>
+                     <?php $i++; endforeach; ?>
+                  </ul>
+                </div>
+              </div>
+          </div>
+          <div class="size1of2 last">
+              <div class="share-icons">
+                  <a id="fb-share">
+                      <img ng-src="system/modules/petpoint/assets/images/fb-icon-32.png" alt="Share this to Facebook" />
+                  </a>
+                  <a socialshare
+                     socialshare-provider="twitter"
+                     socialshare-url="https://www.dakinhumane.org/adopt-a-pet-full.html?pet=<?= $this->petId; ?>"
+                     socialshare-via="dakinhumane"
+                     socialshare-text="Meet <?= $this->pet['AnimalName']; ?>"
+                     socialshare-hashtags="dakin,adoptapet"
+                     >
+                      <img ng-src="system/modules/petpoint/assets/images/twitter-icon-32.png" alt="Share this to Twitter" />
+                  </a>
+                  <a socialshare
+                     socialshare-provider="pinterest"
+                     socialshare-url="https://www.dakinhumane.org/adopt-a-pet-full.html?pet=<?= $this->petId; ?>"
+                     socialshare-media="https:<?= $this->pet['Slides'][0]['src']; ?>"
+                     socialshare-text="<?= $this->pet['AnimalName']; ?>">
+                      <img ng-src="system/modules/petpoint/assets/images/pinterest-icon-32.png" alt="Share this to Pinterest" />
+                  </a>
+              </div>
+              <h1>Meet <?= $this->pet['AnimalName']; ?></h1>
+              <div class="pet_info">
+                  <div class="breed item"><?= $this->pet['BreedInfo']; ?></div>
+                  <div class="location item"><span class="label">Location:</span> <?= $this->pet['Site']; ?></div>
+                  <div class="gender item"><span class="label">Gender:</span> <?= $this->pet['SN']; ?> <?= $this->pet['Sex']; ?></div>
+                  <div class="age item"><span class="label">Age:</span> <?= $this->pet['realage']; ?></div>
+                  <div class="weight item"><span class="label">Weight:</span> <?= $this->pet['Size']; ?></div>
+                  <div class="decription item">
+                      <?= $this->pet['Dsc']; ?>
+                  </div>
+              </div>
+          </div>
+          <?php else: ?>
+          <div class="size1of2"><h3>This pet is no longer available.</h3></div>
+          <?php endif; ?>
+      </div>
+  </div>
+
+<script>
+$(window).load(function() {
+  $('.flexslider').flexslider({controlNav: "thumbnails",directionNav:false,slideshow:false});
+
+document.getElementById('fb-share').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    mobile_iframe: true,
+    href: 'https://www.dakinhumane.org/adopt-a-pet-full.html?pet=<?= $this->petId; ?>',
+  }, function(response){});
+}
+});
+</script>
+
+<?php $this->endblock(); ?>

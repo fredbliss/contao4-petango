@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file datatype="php" original="system/modules/petpoint/languages/en/modules.php" source-language="en">
+        <body>
+            <trans-unit id="FMD.petango_details.0">
+                <source>Petango Details</source>
+            </trans-unit>
+            <trans-unit id="FMD.petango_details.1">
+                <source>Show Details for a given Petango pet record from JSON, with OpenGraph integration.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
