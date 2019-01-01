@@ -205,7 +205,7 @@ class Petango extends Controller
                     }
 
                     if ($field !== 'VideoID')
-                        $strImage = (stripos($arrData[$field], 'Photo-Not-Available') === false ? str_replace('http:','',$arrData[$field]) : 'system/modules/petpoint/assets/images/no_photo_' . $strSpecies . '.png');
+                        $strImage = (stripos($arrData[$field], 'Photo-Not-Available') === false ? str_replace('http:','',$arrData[$field]) : false);
 
                     if (strlen($arrData[$field]) > 0)
                     {
@@ -308,7 +308,7 @@ class Petango extends Controller
                         break;
                 }
 
-                $row['Photo'] = (stripos($row['Photo'],'Photo-Not-Available')===false ? str_replace('http:','',$row['Photo']) : 'system/modules/petpoint/assets/images/no_photo_'.$strSpecies.'.png');
+                $row['Photo'] = (stripos($row['Photo'],'Photo-Not-Available')===false ? str_replace('http:','',$row['Photo']) : false);
                 $arrResults[] = $row;
             }
 
