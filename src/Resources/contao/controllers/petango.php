@@ -11,17 +11,18 @@
  */
 
 
-/**
- * Set the script name
- */
-define('TL_SCRIPT', 'index.php');
 
-
-/**
- * Initialize the system
+/*
+ * This file is part of Contao.
+ *
+ * (c) Leo Feyer
+ *
+ * @license LGPL-3.0-or-later
  */
-define('TL_MODE', 'FE');
-require __DIR__ . '/system/initialize.php';
+
+namespace Petango;
+
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -32,7 +33,7 @@ require __DIR__ . '/system/initialize.php';
  * @author     Leo Feyer <https://contao.org>
  * @package    Core
  */
-class Petango extends Controller
+class Petango extends \Frontend
 {
     protected $authKey = '8r57u9pj9u96ly8es4q8j40460u2m0g25097130u21301rc4p1';
     /**
@@ -47,11 +48,25 @@ class Petango extends Controller
      * @param	void
      * @return	void
      */
+
+    /**
+     * Initialize the object (do not remove)
+     */
     public function __construct()
     {
         parent::__construct();
-    }
 
+        // See #4099
+        if (!\defined('BE_USER_LOGGED_IN'))
+        {
+            \define('BE_USER_LOGGED_IN', false);
+        }
+
+        if (!\defined('FE_USER_LOGGED_IN'))
+        {
+            \define('FE_USER_LOGGED_IN', false);
+        }
+    }
 
     /**
      * Get the ajax request and call all hooks
@@ -61,7 +76,7 @@ class Petango extends Controller
      */
     public function run()
     {
-        $strAction = $this->Input->get('action') ? $this->Input->get('action') : 'all';
+        $strAction = \Input::get('action') ? \Input::get('action') : 'all';
 
         if($strAction=='all')
         {
@@ -400,10 +415,3 @@ class Petango extends Controller
 
     }
 }
-
-
-// create a SimpleAjax instance and run it
-$objPetango = new Petango();
-$objPetango->run();
-
-?>
