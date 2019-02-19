@@ -23,7 +23,7 @@
 namespace Petango;
 
 use Symfony\Component\HttpFoundation\Response;
-
+use Contao\Frontend as Frontend;
 
 /**
  * Class Petango
@@ -33,7 +33,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @author     Leo Feyer <https://contao.org>
  * @package    Core
  */
-class Petango extends \Frontend
+class Petango extends Frontend
 {
     protected $authKey = '8r57u9pj9u96ly8es4q8j40460u2m0g25097130u21301rc4p1';
     /**
