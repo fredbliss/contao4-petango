@@ -20,7 +20,7 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace Petango;
+namespace IntelligentSpark\Petango;
 
 use Symfony\Component\HttpFoundation\Response;
 use Contao\Frontend as Frontend;

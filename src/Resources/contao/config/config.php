@@ -14,9 +14,4 @@
 /**
  * Front end module
  */
-$GLOBALS['FE_MOD']['application']['petango_details'] = 'PetPoint\Modules\PetangoDetails';
-
-/**
- * Content Element
- */
-$GLOBALS['TL_CTE']['includes']['angular'] = 'PetPoint\ContentElement\ContentAngular';
+$GLOBALS['FE_MOD']['application']['petango_details'] = 'IntelligentSpark\Petango\Modules\PetangoDetails';

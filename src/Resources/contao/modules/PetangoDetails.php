@@ -1,6 +1,6 @@
 <?php
 
-namespace Petango\Modules;
+namespace IntelligentSpark\Petango\Modules;
 
 use Contao\Module as Module;
 
