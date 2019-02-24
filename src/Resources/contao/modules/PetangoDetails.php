@@ -49,9 +49,8 @@ class PetangoDetails extends Module {
     protected function compile()
     {
         $strPetId = \Input::get('pet');
-        #$strPetId = 34725352;
         $arrImageSize = array();
-        $content = file_get_contents(TL_ROOT . '/petango_cache/' . $strPetId . '.json');
+        $content = file_get_contents(TL_ROOT . '/files/petango/src/public/petango_cache/' . $strPetId . '.json');
 
         if($content) {
             $arrPet = json_decode($content,true);
