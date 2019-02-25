@@ -16,7 +16,7 @@
                 <div class="flexslider">
                   <ul class="slides">
                     <?php $i=0; foreach ($this->pet['Slides'] as $pictures): ?>
-                    <li<?= $pictures['type']=='video' ? ' class="video_container"' : '' ?> data-thumb="<?= $pictures['type']=='video' ? '/bundles/contao4-petango/pet_vid_icon.png' : 'https:'.$pictures['src'] ?>">
+                    <li<?= $pictures['type']=='video' ? ' class="video_container"' : '' ?> data-thumb="<?= $pictures['type']=='video' ? '/bundles/contao4petango/pet_vid_icon.png' : 'https:'.$pictures['src'] ?>">
                        <?= $pictures['type']=='video' ? '<iframe width="100%" src="'.$pictures['src'].'" frameborder="0" allowfullscreen></iframe>' : '<img src="https:'.$pictures['src'].'" />' ?>
                     </li>
                      <?php $i++; endforeach; ?>
@@ -27,7 +27,7 @@
           <div class="size1of2 last">
               <div class="share-icons">
                   <a id="fb-share">
-                      <img src="/bundles/contao4-petango/fb-icon-32.png" alt="Share this to Facebook" />
+                      <img src="/bundles/contao4petango/fb-icon-32.png" alt="Share this to Facebook" />
                   </a>
                   <a socialshare
                      socialshare-provider="twitter"
@@ -36,14 +36,14 @@
                      socialshare-text="Meet <?= $this->pet['AnimalName']; ?>"
                      socialshare-hashtags="dakin,adoptapet"
                      >
-                      <img src="/bundles/contao4-petango/twitter-icon-32.png" alt="Share this to Twitter" />
+                      <img src="/bundles/contao4petango/twitter-icon-32.png" alt="Share this to Twitter" />
                   </a>
                   <a socialshare
                      socialshare-provider="pinterest"
                      socialshare-url="https://www.dakinhumane.org/adopt-a-pet-full.html?pet=<?= $this->petId; ?>"
                      socialshare-media="https:<?= $this->pet['Slides'][0]['src']; ?>"
                      socialshare-text="<?= $this->pet['AnimalName']; ?>">
-                      <img src="/bundles/contao4-petango/pinterest-icon-32.png" alt="Share this to Pinterest" />
+                      <img src="/bundles/contao4petango/pinterest-icon-32.png" alt="Share this to Pinterest" />
                   </a>
               </div>
               <h1>Meet <?= $this->pet['AnimalName']; ?></h1>
