@@ -19,6 +19,7 @@
               <?= $this->pet['Dsc']; ?>
           </div>
           <a href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>" class="more">Read More <i class="fa fa-caret-right"></i></a>
+        <?php endif; ?>
       </div>
   </div>
 

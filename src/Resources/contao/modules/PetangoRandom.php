@@ -8,6 +8,11 @@ class PetangoRandom extends Module {
 
 
     /**
+     * Template
+     * @var string
+     */
+    protected $strTemplate = 'mod_petangorandom';
+    /**
      * Display a wildcard in the back end
      *
      * @return string
