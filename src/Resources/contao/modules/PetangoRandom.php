@@ -4,7 +4,7 @@ namespace IntelligentSpark\Petango\Modules;
 
 use Contao\Module as Module;
 
-class PetangoDetails extends Module {
+class PetangoRandom extends Module {
 
 
     /**
