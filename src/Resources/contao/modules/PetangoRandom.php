@@ -59,4 +59,14 @@ class PetangoRandom extends Module {
         }
 
     }
+
+    protected function getRealAge($intAge) {
+        $years = $intAge/12;
+
+        if($intAge<12) {
+            return $intAge . ' month'.($intAge>1 ? 's' : '');
+        }else{
+            return floor($years).' year'. (round($years)>1 ? 's':'').(($intAge % 12)>0 ? ', '.$intAge%12 . ' month'.(($intAge%12>1 ? 's' : '')) : '');
+        }
+    }
 }
