@@ -15,3 +15,4 @@
  * Front end module
  */
 $GLOBALS['FE_MOD']['application']['petango_details'] = 'IntelligentSpark\Petango\Modules\PetangoDetails';
+$GLOBALS['FE_MOD']['application']['petango_random'] = 'IntelligentSpark\Petango\Modules\PetangoRandom';

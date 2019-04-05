@@ -8,6 +8,12 @@
             <trans-unit id="FMD.petango_details.1">
                 <source>Show Details for a given Petango pet record from JSON, with OpenGraph integration.</source>
             </trans-unit>
+            <trans-unit id="FMD.petango_random.0">
+                <source>Petango Random</source>
+            </trans-unit>
+            <trans-unit id="FMD.petango_random.1">
+                <source>Show A Random Petango pet record from JSON, with OpenGraph integration.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
