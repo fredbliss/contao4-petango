@@ -1,0 +1,25 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?= $this->articles ?>
+
+  <!-- indexer::stop -->
+  <p class="back"><a href="<?= $this->referer ?>" title="<?= $this->back ?>"><?= $this->back ?></a></p>
+  <!-- indexer::continue -->
+
+  <div class="mod_petrandom">
+      <div class="pet_detail">
+        <?php if ($this->pet): ?>
+          <figure class="image_container">
+              <a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>"><img src="<?= $this->pet['Slides'][0]['src']; ?>" alt="<?= $this->pet['AnimalName']; ?> - <?= $this->pet['Species']; ?>" class="pet_image"></a>
+          </figure>
+          <h2><a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>">Meet <?= $this->pet['AnimalName']; ?></a></h2>
+          <div class="decription item">
+              <?= $this->pet['Dsc']; ?>
+          </div>
+          <a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>" class="more">Read More <i class="fa fa-caret-right"></i></a>
+      </div>
+  </div>
+
+<?php $this->endblock(); ?>

@@ -54,7 +54,7 @@
                   <div class="age item"><span class="label">Age:</span> <?= $this->pet['realage']; ?></div>
                   <div class="weight item"><span class="label">Weight:</span> <?= $this->pet['Size']; ?></div>
                   <div class="decription item">
-                      <?= $this->pet['Dsc']; ?>
+                      <?= is_string($this->pet['Dsc']) ? $this->pet['Dsc'] : ''; ?>
                   </div>
               </div>
           </div>
