@@ -12,13 +12,13 @@
       <div class="pet_detail">
         <?php if ($this->pet): ?>
           <figure class="image_container">
-              <a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>"><img src="<?= $this->pet['Slides'][0]['src']; ?>" alt="<?= $this->pet['AnimalName']; ?> - <?= $this->pet['Species']; ?>" class="pet_image"></a>
+              <a href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>"><img src="<?= $this->pet['Slides'][0]['src']; ?>" alt="<?= $this->pet['AnimalName']; ?> - <?= $this->pet['Species']; ?>" class="pet_image"></a>
           </figure>
-          <h2><a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>">Meet <?= $this->pet['AnimalName']; ?></a></h2>
+          <h2><a href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>">Meet <?= $this->pet['AnimalName']; ?></a></h2>
           <div class="decription item">
               <?= $this->pet['Dsc']; ?>
           </div>
-          <a ng-href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>" class="more">Read More <i class="fa fa-caret-right"></i></a>
+          <a href="adopt-a-pet-full.html?pet=<?= $this->pet['ID']; ?>" title="<?= $this->pet['Name']; ?>" class="more">Read More <i class="fa fa-caret-right"></i></a>
       </div>
   </div>
 
