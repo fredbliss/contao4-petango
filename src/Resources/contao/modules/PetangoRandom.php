@@ -47,14 +47,14 @@ class PetangoRandom extends Module {
         if($content) {
             $arrPet = json_decode($content,true);
 
-            $GLOBALS['TL_HEAD'][] = '<meta property="og:title" content="Meet '.$arrPet['AnimalName'].' - Dakin Humane Society" />';
+            //$GLOBALS['TL_HEAD'][] = '<meta property="og:title" content="Meet '.$arrPet['AnimalName'].' - Dakin Humane Society" />';
 
-            $GLOBALS['TL_HEAD'][] = '<meta property="og:description" content="'.(strlen(strip_tags(trim($arrPet['Dsc'])))>0 ? strip_tags($arrPet['Dsc']) : 'Check it out...').'" />';
+            //$GLOBALS['TL_HEAD'][] = '<meta property="og:description" content="'.(strlen(strip_tags(trim($arrPet['Dsc'])))>0 ? strip_tags($arrPet['Dsc']) : 'Check it out...').'" />';
 
-            $GLOBALS['TL_HEAD'][] = '<meta property="og:url" content="'.\Environment::get('url').'/'.\Environment::get('request').'" />
-            <meta property="og:image" content="https:'.$arrPet['Slides'][0]['src'].'" />
+            //$GLOBALS['TL_HEAD'][] = '<meta property="og:url" content="'.\Environment::get('url').'/'.\Environment::get('request').'" />
+            //<meta property="og:image" content="https:'.$arrPet['Slides'][0]['src'].'" />
             
-            <meta property="og:type" content="website" />';
+            //<meta property="og:type" content="website" />';
 
             $arrPet['realage'] = $this->getRealAge((int)$arrPet['Age']);
 
